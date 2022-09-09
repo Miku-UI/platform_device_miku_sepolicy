@@ -1,3 +1,4 @@
+
 lineageaudio                              u:object_r:lineage_audio_service:s0
 lineagehardware                           u:object_r:lineage_hardware_service:s0
 lineageperformance                        u:object_r:lineage_performance_service:s0
