@@ -1,0 +1,3 @@
+# Reset Signatures
+get_prop(system_server, reset_signatures_prop)
+set_prop(system_server, reset_signatures_prop)

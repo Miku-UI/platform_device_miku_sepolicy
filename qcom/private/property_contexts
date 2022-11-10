@@ -1,2 +1,5 @@
 # FM
 hw.fm.                                  u:object_r:exported3_system_prop:s0
+
+# Reset Signatures
+ro.persist.sys.signatures.reset         u:object_r:reset_signatures_prop:s0
