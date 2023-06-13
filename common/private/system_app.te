@@ -6,3 +6,6 @@ hal_client_domain(system_app, hal_lineage_touch)
 
 # Allow access to governor node
 allow system_app sysfs_devices_system_cpu:file write;
+
+# Zygote
+allow system_app zygote:unix_stream_socket getopt;
