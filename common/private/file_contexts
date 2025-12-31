@@ -8,9 +8,9 @@
 /data/miku_updates(/.*)?           u:object_r:ota_package_file:s0
 
 # Postinstall
-/system/bin/backuptool_ab\.functions              u:object_r:otapreopt_chroot_exec:s0
-/system/bin/backuptool_ab\.sh                     u:object_r:otapreopt_chroot_exec:s0
-/system/bin/backuptool_postinstall\.sh            u:object_r:otapreopt_chroot_exec:s0
+/system/bin/backuptool_ab\.functions              u:object_r:postinstall_exec:s0
+/system/bin/backuptool_ab\.sh                     u:object_r:postinstall_exec:s0
+/system/bin/backuptool_postinstall\.sh            u:object_r:postinstall_exec:s0
 
 # ADB Root
 /(system_ext|system/system_ext)/bin/adb_root      u:object_r:adbroot_exec:s0
