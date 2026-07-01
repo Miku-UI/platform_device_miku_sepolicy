@@ -1,2 +1,5 @@
 # Use HALs
 hal_client_domain(cameraserver, hal_lineage_camera_motor)
+
+# Let cameraserver find camera properties
+get_prop(cameraserver, camera2_extensions_prop)
