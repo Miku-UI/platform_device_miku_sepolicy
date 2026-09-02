@@ -3,7 +3,18 @@ userdebug_or_eng(`
 permissive recovery;
 ')
 
+# Custom version
+get_prop(recovery, custom_version_prop)
+
+# Minadbd networking support
+allow recovery node:tcp_socket node_bind;
+allow recovery port:tcp_socket name_bind;
+allow recovery self:tcp_socket { create_socket_perms_no_ioctl listen accept };
+allow recovery self:vsock_socket { create_socket_perms_no_ioctl listen accept };
+get_prop(recovery, adbd_config_prop)
+
 # Volume manager
+r_dir_file(recovery, sdcard_type)
 allow recovery block_device:dir create_dir_perms;
 allow recovery block_device:blk_file { create unlink rw_file_perms };
 allow recovery proc_filesystems:file r_file_perms;
@@ -16,4 +27,10 @@ allow recovery media_rw_data_file:dir r_dir_perms;
 # Read fbe encryption info
 r_dir_file(recovery, unencrypted_data_file)
 r_dir_file(recovery, media_rw_data_file)
+allow recovery media_rw_data_file:dir r_dir_perms;
+allow recovery sysfs_perdev_minors:file r_file_perms;
+allowxperm recovery block_device:blk_file ioctl { HDIO_GETGEO BLKGETSIZE };
+
+# Read fbe encryption info
+r_dir_file(recovery, unencrypted_data_file)
 ')
