@@ -33,3 +33,6 @@ endif
 
 # Selectively include legacy rules defined by the products
 -include device/miku/sepolicy/legacy-common/sepolicy.mk
+
+# Legacy ION device nodes used by old vendor HALs
+include device/miku/sepolicy/libion/sepolicy.mk
