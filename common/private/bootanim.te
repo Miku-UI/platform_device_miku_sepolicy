@@ -1,0 +1,2 @@
+# persist.sys.theme selects bootanimation-dark.zip
+get_prop(bootanim, theme_prop)
