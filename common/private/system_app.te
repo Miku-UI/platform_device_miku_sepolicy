@@ -9,3 +9,6 @@ allow system_app sysfs_devices_system_cpu:file write;
 
 # Zygote
 allow system_app zygote:unix_stream_socket getopt;
+
+# Settings copies imported boot animations into /data/misc/bootanim/custom.
+file_type_auto_trans(system_app, bootanim_data_file, bootanim_data_file)
